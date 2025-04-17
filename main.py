@@ -17,7 +17,7 @@ def run_tracker():
             if i < 10:
                 url = f"https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/04/202504170{i}.pdf"
             else:
-                url = f"https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/04/2025041z{i}.pdf"
+                url = f"https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/04/20250411{i}.pdf"
             try:
                 response = urllib.request.urlopen(url)
                 code = response.getcode()
