@@ -18,8 +18,8 @@ def tracker_loop():
     while found_url is None:
         for j in range(1000):
             logs.append(f"J loop: {j}")
-            for i in range(48,100):
-                if i == 47:
+            for i in range(0,100):
+                if i == 49:
                     continue
                 current_i = i
                 logs.append(f"⏳ Running tracker... (i = {i})")
