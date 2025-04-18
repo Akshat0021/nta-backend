@@ -19,7 +19,7 @@ def tracker_loop():
         for j in range(1000):
             logs.append(f"J loop: {j}")
             for i in range(0,100):
-                if i == 49:
+                if i == 31:
                     continue
                 current_i = i
                 logs.append(f"⏳ Running tracker... ({i}/99)")
@@ -36,7 +36,7 @@ def tracker_loop():
                     return
                 except:
                     continue
-            time.sleep(1)
+            t
 
 @app.route("/logs")
 def get_logs():
