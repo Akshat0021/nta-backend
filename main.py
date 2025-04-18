@@ -19,7 +19,7 @@ def tracker_loop():
         for j in range(1000):
             logs.append(f"J loop: {j}")
             for i in range(0,100):
-                if i == 31:
+                if i == 31 or i==92:
                     continue
                 current_i = i
                 logs.append(f"⏳ Running tracker... ({i}/99)")
