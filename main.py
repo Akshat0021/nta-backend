@@ -12,6 +12,7 @@ logs = []
 found_url = None
 status = "Running"
 current_i = 0
+RESULT_SITE_URL = "https://examinationservices.nic.in/resultservices/JEEMAIN2025S2P1/Login"
 
 def tracker_loop():
     global logs, found_url, status, current_i
@@ -28,14 +29,26 @@ def tracker_loop():
                 else:
                     url = f"https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/04/20250418{i}.pdf"
                 try:
-                    response = urllib.request.urlopen(url)
-                    code = response.getcode()
-                    logs.append(f"{code} - {url}")
-                    found_url = url
-                    status = "FOUND"
-                    return
+                    response = urllib.request.urlopen(pdf_url)
+                    if response.getcode() == 200:
+                        logs.append(f"📄 PDF found! {pdf_url}")
+                        found_url = pdf_url
+                        status = "FOUND"
+                        return
                 except:
-                    continue
+                    pass
+
+                # Check Result Site URL
+                try:
+                    response = urllib.request.urlopen(RESULT_SITE_URL)
+                    if response.getcode() == 200:
+                        logs.append("📢 Result website is live!")
+                        found_url = RESULT_SITE_URL
+                        status = "FOUND"
+                        return
+                except:
+                    pass
+
             
 
 @app.route("/logs")
