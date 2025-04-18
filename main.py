@@ -36,7 +36,7 @@ def tracker_loop():
                     return
                 except:
                     continue
-            t
+            
 
 @app.route("/logs")
 def get_logs():
